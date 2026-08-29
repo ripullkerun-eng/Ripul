@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripul</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); 
+            height: 100vh; 
+            margin: 0; 
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: white; 
+            text-align: center; 
+            padding-top: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        #tombolDiem {
+            background: #4CAF50;
+            color: white; 
+            border: none; 
+            padding: 15px 35px; 
+            border-radius: 15px; 
+            font-size: 18px; 
+            position: absolute; 
+            left: 50%; 
+            top: 60%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        #tombolKabur {
+            background: #ff4d6d;
+            color: white; 
+            border: none; 
+            padding: 15px 30px; 
+            border-radius: 15px; 
+            font-size: 18px; 
+            position: absolute; 
+            left: 50%; 
+            top: 40%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cakepan aku atau Canva? 😏</h1>
+    
+    <button id="tombolKabur">Canva</button>
+    <button id="tombolDiem">Ripul</button>
 
+    <script>
+        const tombolKabur = document.getElementById('tombolKabur');
+        const tombolDiem = document.getElementById('tombolDiem');
+
+        // tombol kabur
+        function kabur() {
+            let x = Math.random() * (window.innerWidth - tombolKabur.offsetWidth);
+            let y = Math.random() * (window.innerHeight - tombolKabur.offsetHeight);
+            tombolKabur.style.left = x + 'px';
+            tombolKabur.style.top = y + 'px';
+        }
+        tombolKabur.addEventListener('touchstart', kabur);
+        tombolKabur.addEventListener('mouseover', kabur);
+        tombolKabur.addEventListener('click', function() {
+            alert('Dapet juga Canva nya 😂');
+        });
+
+        // tombol diem
+        tombolDiem.addEventListener('click', function() {
+            alert('Kok tau? 🤍🥰'); // INI YANG UDAH DIGANTI
+        });
+    </script>
+</body>
+  </html>
