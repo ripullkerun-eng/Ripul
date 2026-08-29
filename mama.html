@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>Mama Sayang Zea Apa Ipal</title>
+<style>
+  body {
+    margin:0; 
+    min-height:100vh; 
+    background: linear-gradient(135deg, #ff9a9e, #fecfef, #fad0c4);
+    font-family: Arial, sans-serif;
+    overflow: auto; /* biar bisa di scroll */
+    touch-action: pan-x pan-y pinch-zoom; /* biar bisa geser + zoom */
+  }
+  .mama-bg {
+    position: fixed; /* ganti absolute jadi fixed biar ngikut pas di zoom */
+    font-size: 70px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.25);
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    text-align: center;
+    pointer-events: none; /* biar ga ganggu tombol */
+  }
+  #zea {
+    position:absolute;
+    left:50%;
+    top:40%;
+    transform:translate(-50%,-50%);
+    padding:20px 40px;
+    background:#ff1493;
+    color:white;
+    border:none;
+    border-radius:20px;
+    font-size:22px;
+    font-weight:bold;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(255,20,147,0.4);
+  }
+  #ipal {
+    position:absolute;
+    bottom:50px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:15px 30px;
+    background:white;
+    color:#ff1493;
+    border:3px solid #ff1493;
+    border-radius:15px;
+    font-size:18px;
+    font-weight:bold;
+    z-index: 10;
+    box-shadow: 0 5px 20px rgba(255,20,147,0.3);
+  }
+</style>
+</head>
+<body>
+
+  <div class="mama-bg">MAMA SAYANG<br>ZEA APA IPAL</div>
+
+  <button id="zea">Sayang Zea 💗</button>
+  <button id="ipal" onclick="menang()">Sayang Ipal 👑</button>
+
+<script>
+  let zea = document.getElementById("zea");
+  zea.addEventListener('touchstart', kabur);
+  zea.addEventListener('mousedown', kabur);
+
+  function kabur(e) {
+    e.preventDefault();
+    let x = Math.random() * (window.innerWidth - 180);
+    let y = Math.random() * (window.innerHeight - 150);
+    zea.style.left = x + "px";
+    zea.style.top = y + "px";
+  }
+
+  function menang() {
+    alert("makasih mah ❤️");
+  }
+</script>
+
+</body>
+  </html>
