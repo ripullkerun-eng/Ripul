@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Gantengan Gue Apa Lu?</title>
 <style>
   body {
@@ -11,12 +11,25 @@
     background: linear-gradient(135deg, #ff9a9e, #fecfef);
     font-family: Arial, sans-serif;
     overflow: hidden;
-    touch-action: none;
   }
+  
+  .perdi-bg {
+    position: absolute;
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.15);
+    z-index: 1;
+    user-select: none;
+    transform: rotate(-20deg);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+  }
+
   #gue {
     position:absolute;
     left:50%;
-    top:50%;
+    top:40%;
     transform:translate(-50%,-50%);
     padding:20px 40px;
     background:#ff4d6d;
@@ -26,6 +39,8 @@
     font-size:22px;
     font-weight:bold;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 10;
+    touch-action: manipulation; /* ini biar bisa di zoom */
   }
   #lu {
     position:absolute;
@@ -40,10 +55,14 @@
     font-size:18px;
     font-weight:bold;
     cursor:pointer;
+    z-index: 10;
+    touch-action: manipulation;
   }
 </style>
 </head>
 <body>
+
+  <div class="perdi-bg">PERDI</div>
 
   <button id="gue" ontouchstart="kabur()">Gantengan Gue</button>
   <button id="lu" onclick="menang()">Gantengan Lu</button>
@@ -63,4 +82,4 @@
 </script>
 
 </body>
-  </html>
+</html>
